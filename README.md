@@ -182,6 +182,58 @@ Pour compiler tous les TP :
 
 ```bash
 # Depuis la racine du projet
+
+# Compilation des TPs Java
+javac Tp2/*.java Tp3/*.java Tp4/*.java Main.java
+
+# Compilation du TP1 C++ (nécessite MinGW/g++)
+g++ Tp1/MulticastReceiver.cpp -o Tp1/MulticastReceiver.exe -lws2_32
+g++ Tp1/MulticastSender.cpp -o Tp1/MulticastSender.exe -lws2_32
+```
+
+## Auteur
+
+Projet créé pour les TP de réseaux en Java.
+
+## Licence
+
+Ce projet est destiné à des fins éducatives.okup
+
+# Test détection machines
+java Tp4.Tp4TCPActiveServer    # Terminal 1
+java Tp4.Tp4TCPActiveClient    # Terminal 2
+
+# Test communication périodique
+java Tp4.Tp4TCPPeriodicServer  # Terminal 1
+java Tp4.Tp4TCPPeriodicClient  # Terminal 2
+
+# Test proxy
+java Tp4.Tp4TCPActiveServer    # Terminal 1 (serveur distant)
+java Tp4.Tp4LocalProxyServer   # Terminal 2 (proxy local)
+java Tp4.Tp4LocalProxyClient   # Terminal 3 (client proxy)
+```
+
+## Technologies utilisées
+
+- **Java** : Langage de programmation principal
+- **Sockets TCP/UDP** : Communication réseau
+- **Threads** : Programmation concurrente
+- **InetAddress** : Résolution d'adresses IP
+- **PrintStream/BufferedReader** : Flux d'E/S
+- **Scanner** : Lecture clavier
+
+## Ports utilisés
+
+- **1027** : Communications TCP (TP2, TP3, TP4)
+- **9876** : Communications UDP (TP3)
+- **1026** : Proxy local (TP4)
+
+## Compilation générale
+
+Pour compiler tous les TP :
+
+```bash
+# Depuis la racine du projet
 javac Tp2/*.java Tp3/*.java Tp4/*.java Main.java
 ```
 

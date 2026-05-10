@@ -58,9 +58,20 @@ public class Main {
     }
 
     private static void presenterTP1() {
-        System.out.println("=== TP1 - Introduction aux sockets TCP ===");
-        System.out.println("Ce TP n'est pas encore implémenté dans ce projet.");
-        System.out.println("Il devrait couvrir les bases des sockets TCP en Java.");
+        System.out.println("=== TP1 - Multicast en C++ ===");
+        System.out.println("Ce TP est implémenté en C++ et utilise la bibliothèque Winsock2.");
+        System.out.println("Veuillez le compiler et l'exécuter manuellement.");
+        System.out.println();
+        System.out.println("Pour la compilation (avec MinGW/g++) :");
+        System.out.println("  g++ Tp1/MulticastReceiver.cpp -o Tp1/MulticastReceiver.exe -lws2_32");
+        System.out.println("  g++ Tp1/MulticastSender.cpp -o Tp1/MulticastSender.exe -lws2_32");
+        System.out.println();
+        System.out.println("Pour l'exécution :");
+        System.out.println("  1. Lancez le Récepteur dans un terminal :");
+        System.out.println("     ./Tp1/MulticastReceiver.exe 228.5.6.7 6789");
+        System.out.println("  2. Lancez l'Émetteur dans un autre terminal :");
+        System.out.println("     ./Tp1/MulticastSender.exe 228.5.6.7 6789");
+        System.out.println("   (Vous pouvez ensuite taper des messages dans l'émetteur)");
     }
 
     private static void presenterTP2() {

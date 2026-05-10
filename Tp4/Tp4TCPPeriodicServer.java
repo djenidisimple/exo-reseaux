@@ -34,11 +34,10 @@ public class Tp4TCPPeriodicServer {
 
         @Override
         public void run() {
-            BufferedReader reader = null;
-            PrintStream out = null;
-            try {
-                reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                out = new PrintStream(socket.getOutputStream());
+            try (
+                BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                PrintStream out = new PrintStream(socket.getOutputStream())
+            ) {
 
                 String request = reader.readLine();
                 if (request != null && !request.isEmpty()) {
@@ -79,12 +78,6 @@ public class Tp4TCPPeriodicServer {
                 System.err.println("Connexion interrompue avec " + socket.getRemoteSocketAddress());
             } finally {
                 try {
-                    if (out != null) {
-                        out.close();
-                    }
-                    if (reader != null) {
-                        reader.close();
-                    }
                     socket.close();
                 } catch (IOException ignored) {
                 }
